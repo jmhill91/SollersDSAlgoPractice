@@ -72,4 +72,36 @@ namespace SolleresDSAlgo
 
 
     //insert node at specific position in linked list
+
+
+    //Delete A Node
+    SinglyLinkedListNode* deleteNode(SinglyLinkedListNode* llist, int position)
+    {
+        int currentPosition = 0;
+        SinglyLinkedListNode* currentNode = llist;
+        SinglyLinkedListNode* lastNode;
+
+
+        if (llist == NULL)
+        {
+            return NULL;
+        }
+        if (llist->next == NULL && position == 0)
+        {
+            return NULL;
+        }
+        if (position == 0)
+        {
+            return llist->next;
+        }
+        while (currentPosition != position)
+        {
+            lastNode = currentNode;
+            currentNode = currentNode->next;
+            currentPosition++;
+        }
+        lastNode->next = currentNode->next;
+        return llist;
+    }
+
 }
