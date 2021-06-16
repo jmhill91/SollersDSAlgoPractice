@@ -104,4 +104,20 @@ namespace SolleresDSAlgo
         return llist;
     }
 
+
+    //Print in Reverse
+    void reversePrint(SinglyLinkedListNode* llist)
+    {
+        int listSize = 1;
+        if (llist == NULL)
+        {
+            return;
+        }
+        reversePrint(llist->next);
+
+        cout << llist->data << endl;
+
+    }
+
+
 }
