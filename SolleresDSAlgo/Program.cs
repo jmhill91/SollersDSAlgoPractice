@@ -108,7 +108,6 @@ namespace SolleresDSAlgo
     //Print in Reverse
     void reversePrint(SinglyLinkedListNode* llist)
     {
-        int listSize = 1;
         if (llist == NULL)
         {
             return;
@@ -120,4 +119,26 @@ namespace SolleresDSAlgo
     }
 
 
-}
+    //Compare 2 linked list
+    bool compare_lists(SinglyLinkedListNode* head1, SinglyLinkedListNode* head2)
+    {
+        SinglyLinkedListNode* cur1 = head1;
+        SinglyLinkedListNode* cur2 = head2;
+
+        while (cur1 && cur2)
+        {
+            if (cur1->data != cur2->data)
+                return 0;
+            else
+            {
+                cur1 = cur1->next;
+                cur2 = cur2->next;
+            }
+        }
+        if ((cur1 == NULL) && (cur2 == NULL))
+            return 1;
+        else
+            return 0;
+
+    }
+
